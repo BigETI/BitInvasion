@@ -1,10 +1,7 @@
 ﻿using BitInvasion.Controllers;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
+using UnitySceneLoaderManager;
 
 /// <summary>
 /// Bit Invasion managers namespace
@@ -126,6 +123,7 @@ namespace BitInvasion.Managers
                             break;
                         case EGameState.WonGame:
                         case EGameState.LostGame:
+                            gameState = EGameState.Finished;
                             onGameFinished?.Invoke();
                             break;
                     }
@@ -152,7 +150,8 @@ namespace BitInvasion.Managers
         /// </summary>
         public void RestartGame()
         {
-            SceneManager.LoadScene("GameScene");
+            Time.timeScale = 1.0f;
+            SceneLoaderManager.LoadScene("GameScene");
         }
 
         /// <summary>
@@ -160,11 +159,8 @@ namespace BitInvasion.Managers
         /// </summary>
         public void ExitGame()
         {
-#if UNITY_EDITOR
-            EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            Time.timeScale = 1.0f;
+            SceneLoaderManager.LoadScene("MainMenuScene");
         }
 
         /// <summary>

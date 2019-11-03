@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Bit Invasion controllers namespace
+/// </summary>
 namespace BitInvasion.Controllers
 {
     /// <summary>

@@ -1,0 +1,15 @@
+[submodule "Assets/SelectionCursorUI"]
+	path = Assets/SelectionCursorUI
+	url = https://github.com/BigETI/SelectionCursorUI.git
+[submodule "Assets/UnityAudioManager"]
+	path = Assets/UnityAudioManager
+	url = https://github.com/BigETI/UnityAudioManager.git
+[submodule "Assets/UnitySaveGame"]
+	path = Assets/UnitySaveGame
+	url = https://github.com/BigETI/UnitySaveGame.git
+[submodule "Assets/UnitySceneLoaderManager"]
+	path = Assets/UnitySceneLoaderManager
+	url = https://github.com/BigETI/UnitySceneLoaderManager.git
+[submodule "Assets/UnityUtils"]
+	path = Assets/UnityUtils
+	url = https://github.com/BigETI/UnityUtils.git

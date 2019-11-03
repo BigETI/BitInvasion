@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Bit Invasion controllers namespace
@@ -19,7 +20,31 @@ namespace BitInvasion.Controllers
         /// <summary>
         /// Default health format
         /// </summary>
-        private static readonly string defaultHealthFormat = "Health: {0}%";
+        private static readonly string defaultHealthFormat = "{0}%";
+
+        /// <summary>
+        /// Maximum health fill color
+        /// </summary>
+        [SerializeField]
+        private Color maxHealthFillColor = Color.white;
+
+        /// <summary>
+        /// Minimum health fill color
+        /// </summary>
+        [SerializeField]
+        private Color minHealthFillColor = Color.white;
+
+        /// <summary>
+        /// Maximum health background color
+        /// </summary>
+        [SerializeField]
+        private Color maxHealthBackgroundColor = Color.white;
+
+        /// <summary>
+        /// Minimum health background color
+        /// </summary>
+        [SerializeField]
+        private Color minHealthBackgroundColor = Color.white;
 
         /// <summary>
         /// Score per second
@@ -56,6 +81,24 @@ namespace BitInvasion.Controllers
         /// </summary>
         [SerializeField]
         private TextMeshProUGUI healthText = default;
+
+        /// <summary>
+        /// Health slider
+        /// </summary>
+        [SerializeField]
+        private Slider healthSlider = default;
+
+        /// <summary>
+        /// Health slider fill image
+        /// </summary>
+        [SerializeField]
+        private Image healthSliderFillImage = default;
+
+        /// <summary>
+        /// Health slider background image
+        /// </summary>
+        [SerializeField]
+        private Image healthSliderBackgroundImage = default;
 
         /// <summary>
         /// Spaceship controller
@@ -117,6 +160,7 @@ namespace BitInvasion.Controllers
         /// </summary>
         private void UpdateHUD()
         {
+            float health_value = Mathf.Clamp(displayHealth / 100.0f, 0.0f, 1.0f);
             if (scoreText != null)
             {
                 scoreText.text = string.Format(ScoreFormat, displayScore);
@@ -124,6 +168,18 @@ namespace BitInvasion.Controllers
             if (healthText != null)
             {
                 healthText.text = string.Format(HealthFormat, Mathf.RoundToInt(displayHealth));
+            }
+            if (healthSlider != null)
+            {
+                healthSlider.value = health_value;
+            }
+            if (healthSliderFillImage != null)
+            {
+                healthSliderFillImage.color = Color.Lerp(minHealthFillColor, maxHealthFillColor, health_value);
+            }
+            if (healthSliderBackgroundImage != null)
+            {
+                healthSliderBackgroundImage.color = Color.Lerp(minHealthBackgroundColor, maxHealthBackgroundColor, health_value);
             }
         }
 
