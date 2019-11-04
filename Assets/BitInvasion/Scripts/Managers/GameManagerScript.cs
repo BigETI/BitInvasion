@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnitySceneLoaderManager;
+using UnityTiming.Data;
+using UnityUtils;
 
 /// <summary>
 /// Bit Invasion managers namespace
@@ -13,6 +15,12 @@ namespace BitInvasion.Managers
     /// </summary>
     public class GameManagerScript : MonoBehaviour
     {
+        /// <summary>
+        /// Game over timing
+        /// </summary>
+        [SerializeField]
+        private TimingData gameOverTiming = new TimingData(0.25f);
+
         /// <summary>
         /// HUD panel controller
         /// </summary>
@@ -65,6 +73,11 @@ namespace BitInvasion.Managers
         /// Game state
         /// </summary>
         private EGameState gameState;
+
+        /// <summary>
+        /// Can continue after game over
+        /// </summary>
+        private bool canContinueAfterGameOver;
 
         /// <summary>
         /// Score
@@ -123,11 +136,14 @@ namespace BitInvasion.Managers
                             break;
                         case EGameState.WonGame:
                         case EGameState.LostGame:
-                            gameState = EGameState.Finished;
-                            onGameFinished?.Invoke();
+                            if (canContinueAfterGameOver)
+                            {
+                                gameState = EGameState.Finished;
+                                onGameFinished?.Invoke();
+                            }
                             break;
                     }
-                    Time.timeScale = ((gameState == EGameState.Playing) ? 1.0f : 0.0f);
+                    Time.timeScale = (((gameState == EGameState.Playing) || (gameState == EGameState.WonGame) || (gameState == EGameState.LostGame)) ? 1.0f : 0.0f);
                 }
             }
         }
@@ -218,6 +234,13 @@ namespace BitInvasion.Managers
         /// </summary>
         private void Update()
         {
+            if ((!canContinueAfterGameOver) && ((gameState == EGameState.WonGame) || (gameState == EGameState.LostGame)))
+            {
+                if (gameOverTiming.ProceedUpdate(false, true) > 0)
+                {
+                    canContinueAfterGameOver = true;
+                }
+            }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 switch (gameState)
@@ -230,7 +253,7 @@ namespace BitInvasion.Managers
                         break;
                 }
             }
-            else if (Input.anyKeyDown)
+            else if (Game.AnyKeyDown)
             {
                 switch (gameState)
                 {

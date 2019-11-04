@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityAudioManager;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -63,6 +64,12 @@ namespace BitInvasion.Controllers
         /// </summary>
         [SerializeField]
         private GameObject explosionParticleSystemAsset = default;
+
+        /// <summary>
+        /// Explosion audio clip
+        /// </summary>
+        [SerializeField]
+        private AudioClip explosionAudioClip = default;
 
         /// <summary>
         /// Turret controllers
@@ -158,6 +165,7 @@ namespace BitInvasion.Controllers
                             Destroy(go, explosionParticleSystemLifetime);
                         }
                     }
+                    AudioManager.PlaySoundEffect(explosionAudioClip);
                     onDeath?.Invoke();
                     Destroy(gameObject);
                 }

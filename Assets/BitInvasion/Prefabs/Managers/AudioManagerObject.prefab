@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f77ad7a89e8ab840966ce9397020376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundChannelCount: 8
+  soundChannelCount: 12
   resourcesPath: MusicTitles
   isMuted: 0
   startMutedIfMobile: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
     playOnAwake: 1
     loop: 0
     priority: 128
-    volume: 1
+    volume: 0.75
     pitch: 1
     stereoPan: 0
     spatialBlend: 0

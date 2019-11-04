@@ -4,8 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - projectileAsset: {fileID: 7994828692229598124, guid: 0e7bcafafb0498947be638a342eb21c2,
-      type: 3}
+  - projectileAsset: {instanceID: 0}
+  - shootAudioClip: {fileID: 8300000, guid: e89dfc385fe4938479d0af5f02a101b6, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

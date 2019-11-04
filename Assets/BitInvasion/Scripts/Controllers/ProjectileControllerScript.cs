@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityAudioManager;
+using UnityEngine;
 
 /// <summary>
 /// Bit Invasion controllers namespace
@@ -67,6 +68,12 @@ namespace BitInvasion.Controllers
         private GameObject explosionParticleSystemAsset = default;
 
         /// <summary>
+        /// Hit audio clip
+        /// </summary>
+        [SerializeField]
+        private AudioClip hitAudioClip = default;
+
+        /// <summary>
         /// Projectile rigidbody
         /// </summary>
         private Rigidbody projectileRigidbody;
@@ -119,6 +126,7 @@ namespace BitInvasion.Controllers
                     Destroy(go, explosionParticleSystemLifetime);
                 }
             }
+            AudioManager.PlaySoundEffect(hitAudioClip);
             cameraController?.ShakeCamera(camera_shake_intensity, cameraShakeTime);
             Destroy(gameObject);
         }

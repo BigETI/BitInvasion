@@ -13,11 +13,17 @@ namespace BitInvasion.Controllers
     public class MainMenuControllerScript : MonoBehaviour
     {
         /// <summary>
-        /// Start game
+        /// Is main menu
         /// </summary>
-        public void StartGame()
+        [SerializeField]
+        private bool isMainMenu = default;
+
+        /// <summary>
+        /// Show main menu
+        /// </summary>
+        public void ShowMainMenu()
         {
-            SceneLoaderManager.LoadScene("GameScene");
+            SceneLoaderManager.LoadScene("MainMenuScene");
         }
 
         /// <summary>
@@ -29,11 +35,37 @@ namespace BitInvasion.Controllers
         }
 
         /// <summary>
+        /// Start game
+        /// </summary>
+        public void StartGame()
+        {
+            SceneLoaderManager.LoadScene("GameScene");
+        }
+
+        /// <summary>
         /// Exit game
         /// </summary>
         public void ExitGame()
         {
             Game.Quit();
+        }
+
+        /// <summary>
+        /// Update
+        /// </summary>
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (isMainMenu)
+                {
+                    ExitGame();
+                }
+                else
+                {
+                    ShowMainMenu();
+                }
+            }
         }
     }
 }

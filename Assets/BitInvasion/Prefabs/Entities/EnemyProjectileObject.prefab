@@ -84,6 +84,7 @@ MonoBehaviour:
   explosionParticleSystemLifetime: 3
   explosionParticleSystemAsset: {fileID: 790660867364377949, guid: e83ca823f54fb9e4f8c554332cff3806,
     type: 3}
+  hitAudioClip: {fileID: 8300000, guid: 08875db847d388c43be1e9f9be4beaba, type: 3}
 --- !u!1001 &311905357887855288
 PrefabInstance:
   m_ObjectHideFlags: 0

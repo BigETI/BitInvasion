@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/BitInvasion/Scenes/MainMenuScene.unity
     guid: 2b57f62dba2fc314a918dcc02e641c05
   - enabled: 1
+    path: Assets/BitInvasion/Scenes/OptionsScene.unity
+    guid: 19628a642ac434e4d95d01b1a51775f7
+  - enabled: 1
     path: Assets/BitInvasion/Scenes/GameScene.unity
     guid: 60b426cef315c604e8db4d82710e4529
   m_configObjects: {}

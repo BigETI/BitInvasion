@@ -3,7 +3,9 @@ guid: 3b896160c0abc014ebfc894d84f45166
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - explosionParticleSystemAsset: {instanceID: 0}
+  - hitAudioClip: {fileID: 8300000, guid: 08875db847d388c43be1e9f9be4beaba, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

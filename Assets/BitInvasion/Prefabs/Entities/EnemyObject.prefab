@@ -118,6 +118,7 @@ MonoBehaviour:
   characterTransform: {fileID: 2446912601494869664}
   explosionParticleSystemAsset: {fileID: 9033024013241629913, guid: 123658ead84e0f349951759322350539,
     type: 3}
+  explosionAudioClip: {fileID: 8300000, guid: 5b29511c15021db43885269fe65038cb, type: 3}
   turretControllers:
   - {fileID: 5783710989890244033}
   onDeath:
@@ -203,6 +204,7 @@ MonoBehaviour:
   shootTime: 1
   projectileAsset: {fileID: 7621272603484130747, guid: 2cc2af87bb200bb448cfa741d722da8f,
     type: 3}
+  shootAudioClip: {fileID: 8300000, guid: e89dfc385fe4938479d0af5f02a101b6, type: 3}
 --- !u!1001 &3424802782704042833
 PrefabInstance:
   m_ObjectHideFlags: 0

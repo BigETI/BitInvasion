@@ -13,3 +13,6 @@
 [submodule "Assets/UnityUtils"]
 	path = Assets/UnityUtils
 	url = https://github.com/BigETI/UnityUtils.git
+[submodule "Assets/UnityTiming"]
+	path = Assets/UnityTiming
+	url = https://github.com/BigETI/UnityTiming.git

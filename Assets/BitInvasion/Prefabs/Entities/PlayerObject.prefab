@@ -77,6 +77,7 @@ MonoBehaviour:
   characterTransform: {fileID: 2947479328917344792}
   explosionParticleSystemAsset: {fileID: 4472045878373096546, guid: e52e535e4e98a124bbb8d055e923a059,
     type: 3}
+  explosionAudioClip: {fileID: 8300000, guid: 5b29511c15021db43885269fe65038cb, type: 3}
   turretControllers:
   - {fileID: 1596504931196159026}
   - {fileID: 3055716702571647745}
@@ -4895,6 +4896,7 @@ MonoBehaviour:
   shootTime: 0.25
   projectileAsset: {fileID: 8358513719517723606, guid: 0e7bcafafb0498947be638a342eb21c2,
     type: 3}
+  shootAudioClip: {fileID: 0}
 --- !u!1 &5300023152863378074
 GameObject:
   m_ObjectHideFlags: 0
@@ -4941,6 +4943,7 @@ MonoBehaviour:
   shootTime: 0.25
   projectileAsset: {fileID: 8358513719517723606, guid: 0e7bcafafb0498947be638a342eb21c2,
     type: 3}
+  shootAudioClip: {fileID: 0}
 --- !u!1 &5976199917143114949
 GameObject:
   m_ObjectHideFlags: 0
@@ -14507,6 +14510,7 @@ MonoBehaviour:
   shootTime: 0.25
   projectileAsset: {fileID: 8358513719517723606, guid: 0e7bcafafb0498947be638a342eb21c2,
     type: 3}
+  shootAudioClip: {fileID: 8300000, guid: e89dfc385fe4938479d0af5f02a101b6, type: 3}
 --- !u!1 &8220256283099382661
 GameObject:
   m_ObjectHideFlags: 0

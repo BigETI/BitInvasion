@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityAudioManager;
+using UnityEngine;
 
 /// <summary>
 /// Bit Invasion controllers namespace
@@ -24,6 +25,12 @@ namespace BitInvasion.Controllers
         private GameObject projectileAsset = default;
 
         /// <summary>
+        /// Shoot audio clip
+        /// </summary>
+        [SerializeField]
+        private AudioClip shootAudioClip = default;
+
+        /// <summary>
         /// Elapsed time
         /// </summary>
         private float elapsedTime = default;
@@ -37,6 +44,7 @@ namespace BitInvasion.Controllers
             {
                 elapsedTime = 0.0f;
                 Instantiate(projectileAsset, transform.position, transform.rotation);
+                AudioManager.PlaySoundEffect(shootAudioClip);
             }
         }
 
